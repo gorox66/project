@@ -8,3 +8,8 @@ class Book:
 
     def __str__(self):
         return f"{self.title};{self.author};{self.year};{self.genre};{self.quantity}"
+
+def add_book(book):
+    file = open('catalog.txt', 'a', encoding='utf-8')
+    file.write(str(book) + '\n')
+    file.close()
