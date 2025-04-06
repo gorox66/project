@@ -1,9 +1,9 @@
 def add_book():
     name_of_book = input("Введите название книги: ")
-    author = input("Ввеите автора книги: ")
+    author = input("Введите автора книги: ")
     year_of_publication = int(input("Введите год издания книги: "))
     genre = input("Введите жанр книги: ")
-    count_books = int(input("Введите количество кинг в наличии: "))
+    count_books = int(input("Введите количество книг в наличии: "))
 
     book = f"{name_of_book};{author};{year_of_publication};{genre};{count_books}\n"
 
