@@ -25,3 +25,29 @@ def show_books():
             print(f"Название книги: {name_of_book}, автор: {author}, год издания: {year_of_publication}, жанр: {genre}, количество книг в наличии: {count_books}")
     else:
         print("В каталоге нет книг")
+
+def remove_book():
+    name_of_book = input("Введите название книги для удаления: ")
+
+    file = open("catalog.txt", "r", encoding="utf-8")
+    books = file.readlines()
+    file.close()
+
+    updated_books = []
+    book_found = False
+
+    for book in books:
+        current_name_of_book = book.split(';')[0]
+        if current_name_of_book != name_of_book:
+            updated_books.append(book)
+        else:
+            book_found = True
+
+    file = open("catalog.txt", "w", encoding="utf-8")
+    file.writelines(updated_books)
+    file.close()
+
+    if book_found:
+        print("Книга удалена из каталога")
+    else:
+        print("Книга не найдена в каталоге")
